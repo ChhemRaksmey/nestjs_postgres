@@ -1,0 +1,430 @@
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="mb-0">AML - Transaction Detect Role</h4>
+            <div class="page-title-right">
+                <a role="button" class="btn btn-sm w-sm btn-primary">Help</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row font-size-12">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+        
+                <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap">
+
+                    <thead>
+                        <tr>
+                            <th class="py-1 col-11">Customer Type</th>
+                            <th class="py-1 col-1 text-center">Action</th>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+
+                        <tr>
+                            <td class="py-1">Consumer</td>
+                            <td class="py-1 text-center">
+                                <div class="dropdown dropstart">
+                                    <a role="button" class="" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-tools"></i>
+                                    </a>
+                                    <div class="dropdown-menu font-size-12" style="inset: unset !important;">
+                                        <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-view">View</a>
+                                        <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-edit">Edit</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="py-1">Commercial</td>
+                            <td class="py-1 text-center">
+                                <div class="dropdown dropstart">
+                                    <a role="button" class="" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-tools"></i>
+                                    </a>
+                                    <div class="dropdown-menu font-size-12" style="inset: unset !important;">
+                                        <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-view">View</a>
+                                        <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-edit">Edit</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="popup-form-view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header pb-2">
+                <h5 class="modal-title">View Transaction Detect Role</h5>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-4 mb-2">
+                        <label class="form-label mb-0">Customer Type</label>
+                        <input type="text" class="form-control form-control-sm" disabled readonly value="" />
+                    </div>
+                </div>
+
+                <table class="table table-striped mb-0 font-size-12">
+                    <thead>
+                        <tr>
+                            <th class="bg-primary text-white py-1 col-1">Role Name</th>
+                            <th class="bg-primary text-white py-1 col-8">Narrative</th>
+                            <th class="bg-primary text-white py-1 col-2 text-center">Field Value</th>
+                            <th class="bg-primary text-white py-1 col-1 text-center">Enable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="py-1">AML-001</td>
+                            <td class="py-1">Customer open account more then 2 in last week.</td>
+                            <td class="py-1 text-center"></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-002</td>
+                            <td class="py-1">Customer open account more then 4 in last month.</td>
+                            <td class="py-1 text-center"></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-003</td>
+                            <td class="py-1">Customer make cash deposit total greater then or equal to X in week.</td>
+                            <td class="py-1 text-center"><b>X = 10000 | Y = 5</b></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-004</td>
+                            <td class="py-1">Customer make cash deposit total greater then or equal to X in month</td>
+                            <td class="py-1 text-center"><b>X = 10000 | Y = 5</b></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-005</td>
+                            <td class="py-1">Customer make cash withdrawal total greater then or equal to X in week.</td>
+                            <td class="py-1 text-center"><b>X = 10000 | Y = 5</b></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-006</td>
+                            <td class="py-1">Customer make cash withdrawal total greater then or equal to X in month.</td>
+                            <td class="py-1 text-center"><b>X = 10000 | Y = 5</b></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-007</td>
+                            <td class="py-1">Customer make cash withdrawal total greater then or equal to X in week.</td>
+                            <td class="py-1 text-center"><b>X = 10000 | Y = 5</b></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-008</td>
+                            <td class="py-1">Customer make account transfer in total greater then or equal to X in week.</td>
+                            <td class="py-1 text-center"><b>X = 10000 | Y = 5</b></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-009</td>
+                            <td class="py-1">Customer make account transfer in total greater then or equal to X in month.</td>
+                            <td class="py-1 text-center"><b>X = 10000 | Y = 5</b></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-010</td>
+                            <td class="py-1">Customer make account transfer out total greater then or equal to X in week.</td>
+                            <td class="py-1 text-center"><b>X = 10000 | Y = 5</b></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1">AML-011</td>
+                            <td class="py-1">Customer make account transfer out total greater then or equal to X in month.</td>
+                            <td class="py-1 text-center"><b>X = 10000 | Y = 5</b></td>
+                            <td class="py-1 text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm w-sm btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="popup-form-edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header pb-2">
+                <h5 class="modal-title">Edit Transaction Detect Role</h5>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-4 mb-2">
+                        <label class="form-label mb-0">Customer Type</label>
+                        <input type="text" class="form-control form-control-sm" disabled readonly value="" />
+                    </div>
+                </div>
+
+                <table class="table table-striped mb-0 font-size-12">
+                    <thead>
+                        <tr>
+                            <th class="bg-primary text-white py-1 col-1">Role Name</th>
+                            <th class="bg-primary text-white py-1 col-8">Narrative</th>
+                            <th class="bg-primary text-white py-1 col-2">Field Value</th>
+                            <th class="bg-primary text-white py-1 col-1 text-center">Enable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-001</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer open account more then 2 in last week.</label></td>
+                            <td class="py-1"></td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-002</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer open account more then 4 in last month.</label></td>
+                            <td class="py-1"></td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-003</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash deposit total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-004</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash deposit total greater then or equal to X in month</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-005</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash withdrawal total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-006</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash withdrawal total greater then or equal to X in month.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-007</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash withdrawal total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-008</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make account transfer in total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-009</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make account transfer in total greater then or equal to X in month.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-010</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make account transfer out total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1"><label class="col-form-label py-1">AML-011</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make account transfer out total greater then or equal to X in month.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-1">
+                                <div class="form-check form-switch-md">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" checked="" />
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm w-sm btn-primary">Submit</button>
+                <button type="button" class="btn btn-sm w-sm btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>

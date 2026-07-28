@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <%- include('htmlStyle') %>
+
+    </head>
+
+    <body data-sidebar="dark">
+
+        <div id="layout-wrapper">
+
+            <%- include('navigation') %>
+
+            <%- include('sidebar') %>
+            
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <%- body %>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+        
+        <div class="rightbar-overlay"></div>
+
+        <%- include('htmlScript') %>
+
+    </body>
+
+</html>

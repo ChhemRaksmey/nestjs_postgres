@@ -1,0 +1,92 @@
+<!-- JAVASCRIPT -->
+<script src="/libs/jquery/jquery.min.js"></script>
+<script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/libs/metismenu/metisMenu.min.js"></script>
+<script src="/libs/simplebar/simplebar.min.js"></script>
+<script src="/libs/node-waves/waves.min.js"></script>
+<script src="/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="/libs/jquery.counterup/jquery.counterup.min.js"></script>
+
+<!-- plugins -->
+<script src="/libs/select2/js/select2.min.js"></script>
+<script src="/libs/spectrum-colorpicker2/spectrum.min.js"></script>
+<script src="/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+<script src="/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+<script src="/libs/@chenfengyuan/datepicker/datepicker.min.js"></script>
+
+<!-- Required datatable js -->
+<script src="/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<!-- Buttons examples -->
+<script src="/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+<script src="/libs/jszip/jszip.min.js"></script>
+<script src="/libs/pdfmake/build/pdfmake.min.js"></script>
+<script src="/libs/pdfmake/build/vfs_fonts.js"></script>
+<script src="/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+        
+<!-- Responsive examples -->
+<script src="/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+<!-- form repeater js -->
+<script src="/libs/jquery.repeater/jquery.repeater.min.js"></script>
+
+<script src="/js/pages/form-repeater.int.js"></script>
+
+<!-- Datatable init js -->
+<script>
+    $(document).ready(function () {
+
+        $(".picker-dropdown").select2();
+
+        $("#picker-color1").spectrum();
+        $("#picker-color2").spectrum();
+        $("#picker-color3").spectrum();
+        $("#picker-color4").spectrum();
+        $("#picker-color5").spectrum();
+
+        $('#datatable').DataTable({
+            ordering: !1,
+            lengthChange: !1,
+            language: {
+                paginate: {
+                    first: '<i class="fas fa-angle-double-left"></i>',
+                    last: '<i class="fas fa-angle-double-right"></i>',
+                    next: '<i class="fas fa-angle-right"></i>',
+                    previous: '<i class="fas fa-angle-left"></i>'
+                }
+            },
+        });
+
+        $('#db-table-search-result').DataTable({
+            ordering: !1,
+            lengthChange: !1,
+            searching: !1,
+            language: {
+                paginate: {
+                    first: '<i class="fas fa-angle-double-left"></i>',
+                    last: '<i class="fas fa-angle-double-right"></i>',
+                    next: '<i class="fas fa-angle-right"></i>',
+                    previous: '<i class="fas fa-angle-left"></i>'
+                }
+            },
+        });
+        
+    });
+</script>
+
+<!-- fontawesome icons init -->
+<script src="/js/pages/fontawesome.init.js"></script>
+
+<!-- toastr plugin -->
+<script src="/libs/toastr/build/toastr.min.js"></script>
+
+<!-- toastr init -->
+<script src="/js/pages/toastr.init.js"></script>
+
+<!-- App js -->
+<script src="/js/app.js"></script>

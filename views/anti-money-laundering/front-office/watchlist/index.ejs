@@ -1,0 +1,1122 @@
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="mb-0">AML - Watch-List Customers</h4>
+            <div class="page-title-right">
+                <a role="button" class="btn btn-sm w-sm btn-primary">Search</a>
+                <a role="button" class="btn btn-sm w-sm btn-primary">Help</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row font-size-13">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+        
+                <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap">
+
+                    <thead>
+                        <tr>
+                            <th class="py-1">CID</th>
+                            <th class="py-1">Customer Name</th>
+                            <th class="py-1">Gender</th>
+                            <th class="py-1">Date Birth</th>
+                            <th class="py-1">Document Id</th>
+                            <th class="py-1">Detected In</th>
+                            <th class="py-1 text-center">Action</th>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+
+                        <% for(var i=1; i <= 15; i++) { %>
+                            <tr>
+                                <td class="py-1">Consumer Name <%= i %></td>
+                                <td class="py-1"></td>
+                                <td class="py-1"></td>
+                                <td class="py-1"></td>
+                                <td class="py-1"></td>
+                                <td class="py-1"></td>
+                                <td class="py-1 text-center">
+                                    <a role="button" class="text-muted fas fa-ellipsis-h" data-bs-toggle="modal" aria-haspopup="true" aria-expanded="false" data-bs-target="#popup-view"></a>
+                                </td>
+                            </tr>
+                        <% } %>
+
+                    </tbody>
+
+                </table>
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="popup-view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header pb-2">
+                <h6 class="modal-title">Watch-List Full Overview</h6>
+                <div>
+                    <button type="button" class="btn btn-sm w-sm btn-primary" data-bs-dismiss="modal">Add White-List</button>
+                    <button type="button" class="btn btn-sm w-sm btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link py-1 active" data-bs-toggle="tab" href="#tab-view-detail-customer" role="tab">
+                            <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                            <span class="d-none d-sm-block">Customer</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link py-1" data-bs-toggle="tab" href="#tab-view-detail-ofac-sdn" role="tab">
+                            <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                            <span class="d-none d-sm-block">OFAC - SDN</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link py-1" data-bs-toggle="tab" href="#tab-view-detail-ofac-consolidate" role="tab">
+                            <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                            <span class="d-none d-sm-block">OFAC - Consolidated</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link py-1" data-bs-toggle="tab" href="#tab-view-detail-un-consolidated" role="tab">
+                            <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                            <span class="d-none d-sm-block">UN - Consolidated</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link py-1" data-bs-toggle="tab" href="#tab-view-detail-eu" role="tab">
+                            <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                            <span class="d-none d-sm-block">EU</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="tab-content py-2 text-muted">
+
+                    <div role="tabpanel" class="tab-pane active" id="tab-view-detail-customer">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="10000">
+                                            <img src="/images/small/img-1.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="/images/small/img-2.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/images/small/img-3.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <th class="p-0 pt-1">Customer ID:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="p-0 pt-1">Family Name:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Document Type:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Address Province:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="p-0 pt-1">Giving Name:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Document No:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Address District:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="p-0 pt-1">Gender:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Document Issue By:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Address Commune:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="p-0 pt-1">Date Of Birth:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Document Date Issue:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Address Village:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="p-0 pt-1">Place Of Brith:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Document Date Expiry:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <th class="p-0 pt-1">Street Name/No:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="p-0 pt-1">Nationality:</th>
+                                            <td class="p-0 pt-1">xxxxxxxxxxxxx</td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                            <td class="p-0 pt-1"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="tab-view-detail-ofac-sdn">
+                        <div class="accordion" id="accordionExample">
+
+                            <% for(var i=1; i <= 5; i++) { %>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <a class="accordion-button py-3 font-size-12" data-bs-target="#collapse-view-ofac-sdn-<%= i %>" role="button" data-bs-toggle="collapse" aria-expanded="true">
+                                            <b>BANK OF KUNLUN CO LTD</b>
+                                        </a>
+                                    </h2>
+                                    <div class="accordion-collapse collapse show" id="collapse-view-ofac-sdn-<%= i %>">
+                                        <div class="accordion-body">
+
+                                            <p class="h6 mb-1"><b>Details:</b></p>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row mb-0">
+                                                        <label class="col-md-3 mb-0"><b>Type:</b></label>
+                                                        <label class="col-md-9 mb-0">Entity</label>
+                                                    </div>
+                                                    <div class="row mb-0">
+                                                        <label class="col-md-3 mb-0"><b>Entity Name:</b></label>
+                                                        <label class="col-md-9 mb-0">BANK OF KUNLUN CO LTD</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row mb-0">
+                                                        <label class="col-md-3 mb-0"><b>List:</b></label>
+                                                        <label class="col-md-9 mb-0">Non-SDN</label>
+                                                    </div>
+                                                    <div class="row mb-0">
+                                                        <label class="col-md-3 mb-0"><b>Program:</b></label>
+                                                        <label class="col-md-9 mb-0">561-Related</label>
+                                                    </div>
+                                                    <div class="row mb-0">
+                                                        <label class="col-md-3 mb-0"><b>Remarks:</b></label>
+                                                        <label class="col-md-9 mb-0">United States financial institutions are prohibited from opening or maintaining a correspondent account or a payable-through account for the foreign financial institution listed here, pursuant to 31 C.F.R. section 561.201(c)</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <p class="h6 mb-0"><b>Identifications:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">Type</th>
+                                                        <th class="bg-soft-dark p-1">ID#</th>
+                                                        <th class="bg-soft-dark p-1">Country</th>
+                                                        <th class="bg-soft-dark p-1">Issue Date</th>
+                                                        <th class="bg-soft-dark p-1">Expire Dat</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">SWIFT/BIC</td>
+                                                        <td class="p-1">CKLBCNBJ</td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Aliases:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">Type</th>
+                                                        <th class="bg-soft-dark p-1">Category</th>
+                                                        <th class="bg-soft-dark p-1">Name</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">KARAMAY URBAN CREDIT COOPERATIVES</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">KARAMAY CITY COMMERCIAL BANK CO LTD.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Addresses:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">Address</th>
+                                                        <th class="bg-soft-dark p-1">City</th>
+                                                        <th class="bg-soft-dark p-1">State/Province</th>
+                                                        <th class="bg-soft-dark p-1">Postal Code</th>
+                                                        <th class="bg-soft-dark p-1">Country</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td class="p-1">172 Xibin Rd Ranghulu District (Daqing, Heilongjiang Branch)</td>
+                                                        <td class="p-1">Daqing</td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1">163453</td>
+                                                        <td class="p-1">China</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="p-1">9 Dongzhimen North Street Dongcheng District (Head Office)</td>
+                                                        <td class="p-1">Beijing</td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1">100007</td>
+                                                        <td class="p-1">China</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="p-1">No. 7 Century Ave (Registered Office)</td>
+                                                        <td class="p-1">Xinjiang</td>
+                                                        <td class="p-1">Karamay</td>
+                                                        <td class="p-1">834000</td>
+                                                        <td class="p-1">China</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="p-1">No. 68 Zhongya South Rd Economic and Technological Development Zone (Urumqi, Xinjiang Branch)</td>
+                                                        <td class="p-1">Urumqi</td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1">830026</td>
+                                                        <td class="p-1">China</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="tab-view-detail-ofac-consolidate">
+                        <div class="accordion" id="accordionExample">
+
+                            <% for(var i=1; i <= 5; i++) { %>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <a class="accordion-button py-3 font-size-12" data-bs-target="#collapse-view-ofac-consolidate-<%= i %>" role="button" data-bs-toggle="collapse" aria-expanded="true">
+                                            <b>BANK OF KUNLUN CO LTD</b>
+                                        </a>
+                                    </h2>
+                                    <div class="accordion-collapse collapse show" id="collapse-view-ofac-consolidate-<%= i %>">
+                                        <div class="accordion-body">
+
+                                            <p class="h6 mb-0"><b>Details:</b></p>
+                                            <div class="row mb-2">
+                                                <div class="col-md-6">
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-3 mb-0"><b>UID:</b></label>
+                                                        <label class="col-md-9 mb-0">9639</label>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-3 mb-0"><b>Type:</b></label>
+                                                        <label class="col-md-9 mb-0">Individual</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-3 mb-0"><b>First Name:</b></label>
+                                                        <label class="col-md-9 mb-0">Ismail Abdul Salah</label>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-3 mb-0"><b>Last Name:</b></label>
+                                                        <label class="col-md-9 mb-0">HANIYA</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <p class="h6 mb-0"><b>Program List:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">Program Name</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">NS-PLC</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">SDGT</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Legal ID List:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">UID</th>
+                                                        <th class="bg-soft-dark p-1">Legal Type</th>
+                                                        <th class="bg-soft-dark p-1">Legal Number</th>
+                                                        <th class="bg-soft-dark p-1">Country</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">9477</td>
+                                                        <td class="p-1">Registration ID</td>
+                                                        <td class="p-1">1027739609391</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">9477</td>
+                                                        <td class="p-1">Registration ID</td>
+                                                        <td class="p-1">1027739609391</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">9478</td>
+                                                        <td class="p-1">Government Gazette Number</td>
+                                                        <td class="p-1">00032520</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">9483</td>
+                                                        <td class="p-1">Tax ID No.</td>
+                                                        <td class="p-1">7702070139</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">9486</td>
+                                                        <td class="p-1">License</td>
+                                                        <td class="p-1">1000</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">24641</td>
+                                                        <td class="p-1">Legal Entity Number</td>
+                                                        <td class="p-1">253400V1H6ART1UQ0N98</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">146553</td>
+                                                        <td class="p-1">Organization Established Date</td>
+                                                        <td class="p-1">17 Oct 1990</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">115744</td>
+                                                        <td class="p-1">SWIFT/BIC</td>
+                                                        <td class="p-1">VTBRRUMM</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">115745</td>
+                                                        <td class="p-1">Website</td>
+                                                        <td class="p-1">www.vtb.com</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">146547</td>
+                                                        <td class="p-1">Website</td>
+                                                        <td class="p-1">www.vtb.ru</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">151145</td>
+                                                        <td class="p-1">Secondary sanctions risk:</td>
+                                                        <td class="p-1">Ukraine-/Russia-Related Sanctions Regulations, 31 CFR 589.201 and/or 589.209</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">172703</td>
+                                                        <td class="p-1">Secondary sanctions risk:</td>
+                                                        <td class="p-1">See Section 11 of Executive Order 14024.</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">146548</td>
+                                                        <td class="p-1">BIK (RU)</td>
+                                                        <td class="p-1">044030707</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">146549</td>
+                                                        <td class="p-1">BIK (RU)</td>
+                                                        <td class="p-1">044525187</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">116142</td>
+                                                        <td class="p-1">Executive Order 13662 Directive Determination -</td>
+                                                        <td class="p-1">Subject to Directive 1</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">146669</td>
+                                                        <td class="p-1">Target Type</td>
+                                                        <td class="p-1">Financial Institution</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>AKA List:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">uid</th>
+                                                        <th class="bg-soft-dark p-1">type</th>
+                                                        <th class="bg-soft-dark p-1">category</th>
+                                                        <th class="bg-soft-dark p-1">lastName</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class="p-1">26072</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">JSC VTB BANK</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">26073</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VTB OPEN JOINT STOCK COMPANY</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">26075</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VNESHNEY TORGOVLI OPEN JOINT STOCK COMPANY</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">26076</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VNESHNEY TORGOVLI JOINT STOCK COMPANY</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">26077</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VNESHNEI TORGOVLI RSFSR</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">26078</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VNESHNEY TORGOVLI ROSSIYSKOY FEDERATSII CLOSED JOINT STOCK COMPANY</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">26079</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">VNESHTORGBANK ROSSII CLOSED JOINT STOCK COMPANY</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">26081</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VTB OAO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54895</td>
+                                                        <td class="p-1">a.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">VTB BANK PAO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54896</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">VTB BANK OAO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54900</td>
+                                                        <td class="p-1">a.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">VTB BANK PJSC</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54902</td>
+                                                        <td class="p-1">a.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VTB PUBLICHNOE AKTSIONERNOE OBSHCHESTVO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54903</td>
+                                                        <td class="p-1">a.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">VTB BANK</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54907</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">OAO BANK VTB</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54908</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">VTB BANK OPEN JOINT STOCK COMPANY</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54909</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VNESHEI TORGOVLI OAO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54912</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VNESHNEI TORGOVLI ROSSISKOI FEDERATSII AS A PRIVATE JOINT STOCK COMPANY</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54914</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">OAO VNESHTORGBANK</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54940</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK OF FOREIGN TRADE OF THE RUSSIAN FEDERATION</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54941</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK FOR FOREIGN TRADE OF RSFSR</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54942</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">VNESHTORGBANK OF RSFSR</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54943</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">CJSC BANK FOR FOREIGN TRADE OF THE RUSSIAN FEDERATION</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54944</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">RUSSIAN VNESHTORGBANK</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54945</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">VNESHTORGBANK</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">54946</td>
+                                                        <td class="p-1">f.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">OJSC CJSC BANK FOR FOREIGN TRADE</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">55124</td>
+                                                        <td class="p-1">a.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">BANK VTB PAO</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">77195</td>
+                                                        <td class="p-1">a.k.a.</td>
+                                                        <td class="p-1">weak</td>
+                                                        <td class="p-1">JSC VTB BANK NEW DELHI BRANCH</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">77196</td>
+                                                        <td class="p-1">a.k.a.</td>
+                                                        <td class="p-1">strong</td>
+                                                        <td class="p-1">VTB BANK PJSC SHANGHAI BRANCH</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Nationality Lists:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">UID</th>
+                                                        <th class="bg-soft-dark p-1">country</th>
+                                                        <th class="bg-soft-dark p-1">mainEntry</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                    <tr>
+                                                        <td class="p-1">78480</td>
+                                                        <td class="p-1">Haiti</td>
+                                                        <td class="p-1">true</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                            <p class="h6 mb-0"><b>Date Of Birth List:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">UID</th>
+                                                        <th class="bg-soft-dark p-1">dateOfBirth</th>
+                                                        <th class="bg-soft-dark p-1">mainEntry</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">4696</td>
+                                                        <td class="p-1">1962</td>
+                                                        <td class="p-1">true</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Place Of Birth List:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">UID</th>
+                                                        <th class="bg-soft-dark p-1">placeOfBirth</th>
+                                                        <th class="bg-soft-dark p-1">mainEntry</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">4697</td>
+                                                        <td class="p-1">Shati</td>
+                                                        <td class="p-1">true</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Address Lists:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">UID</th>
+                                                        <th class="bg-soft-dark p-1">address1</th>
+                                                        <th class="bg-soft-dark p-1">city</th>
+                                                        <th class="bg-soft-dark p-1">postalCode</th>
+                                                        <th class="bg-soft-dark p-1">country</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                    <tr>
+                                                        <td class="p-1">25798</td>
+                                                        <td class="p-1">29, Bolshaya Morskaya str.</td>
+                                                        <td class="p-1">St. Petersburg</td>
+                                                        <td class="p-1">190000</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">25799</td>
+                                                        <td class="p-1">37 Plyushchikha ul.</td>
+                                                        <td class="p-1">Moscow</td>
+                                                        <td class="p-1">119121</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">25800</td>
+                                                        <td class="p-1">43, Vorontsovskaya str.</td>
+                                                        <td class="p-1">Moscow</td>
+                                                        <td class="p-1">109044</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">52482</td>
+                                                        <td class="p-1">11 litera, per. Degtyarny</td>
+                                                        <td class="p-1">St. Petersburg</td>
+                                                        <td class="p-1">191144</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">52483</td>
+                                                        <td class="p-1">11, lit A, Degtyarnyy pereulok</td>
+                                                        <td class="p-1">St. Petersburg</td>
+                                                        <td class="p-1">191144</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">52484</td>
+                                                        <td class="p-1">43, bld.1, Vorontsovskaya str.</td>
+                                                        <td class="p-1">Moscow</td>
+                                                        <td class="p-1">109147</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">52485</td>
+                                                        <td class="p-1">Bashnya Zapad, Kompleks Federatsiya, 12, nab. Presnenskaya</td>
+                                                        <td class="p-1">Moscow</td>
+                                                        <td class="p-1">123317</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">52486</td>
+                                                        <td class="p-1">str. 1, 43, ul. Vorontsovskaya</td>
+                                                        <td class="p-1">Moscow</td>
+                                                        <td class="p-1">109147</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">52488</td>
+                                                        <td class="p-1">Vorontsovskaya Str 43</td>
+                                                        <td class="p-1">Moscow</td>
+                                                        <td class="p-1">109147</td>
+                                                        <td class="p-1">Russia</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">74656</td>
+                                                        <td class="p-1">The Taj Mahal Hotel, Lobby Mezzanine Floor 1, Mansingh Road</td>
+                                                        <td class="p-1">New Delhi</td>
+                                                        <td class="p-1">110001</td>
+                                                        <td class="p-1">India</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">74657</td>
+                                                        <td class="p-1">1266 Nanjing Xilu Street, Jingan District</td>
+                                                        <td class="p-1">Shanghai</td>
+                                                        <td class="p-1">200040</td>
+                                                        <td class="p-1">China</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">74658</td>
+                                                        <td class="p-1">18 BC, CITIC Building, 19 Jianguomenwai Dajie</td>
+                                                        <td class="p-1">Beijing</td>
+                                                        <td class="p-1">100004</td>
+                                                        <td class="p-1">China</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="tab-view-detail-un-consolidated">
+                        <div class="accordion" id="accordionExample">
+
+                            <% for(var i=1; i <= 5; i++) { %>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <a class="accordion-button py-3 font-size-12" data-bs-target="#collapse-view-ofac-consolidate-<%= i %>" role="button" data-bs-toggle="collapse" aria-expanded="true">
+                                            <b>BANK OF KUNLUN CO LTD</b>
+                                        </a>
+                                    </h2>
+                                    <div class="accordion-collapse collapse show" id="collapse-view-ofac-consolidate-<%= i %>">
+                                        <div class="accordion-body">
+
+                                            <p class="h6 mb-0"><b>Details:</b></p>
+                                            <div class="row mb-2">
+                                                <div class="col-md-6">
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-4 mb-0"><b>DATAID:</b></label>
+                                                        <label class="col-md-8 mb-0">6907995</label>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-4 mb-0"><b>Version:</b></label>
+                                                        <label class="col-md-8 mb-0">1</label>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-4 mb-0"><b>Reference Number:</b></label>
+                                                        <label class="col-md-8 mb-0">CDi.003</label>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-4 mb-0"><b>Listed On:</b></label>
+                                                        <label class="col-md-8 mb-0">2010-12-01</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-4 mb-0"><b>Gender:</b></label>
+                                                        <label class="col-md-8 mb-0">Male</label>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-4 mb-0"><b>First Name:</b></label>
+                                                        <label class="col-md-8 mb-0">GASTON</label>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-4 mb-0"><b>Second name:</b></label>
+                                                        <label class="col-md-8 mb-0">IYAMUREMYE</label>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-4 mb-0"><b>UN List Type:</b></label>
+                                                        <label class="col-md-8 mb-0">DRC</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-2 mb-0"><b>Comment:</b></label>
+                                                        <label class="col-md-10 mb-0">INTERPOL-UN Security Council Special Notice web link:https://www.interpol.int/en/How-we-work/Notices/View-UN-Notices-Individuals</label>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label class="col-md-2 mb-0"><b>Has Interpol Link:</b></label>
+                                                        <label class="col-md-10 mb-0">https://www.interpol.int/en/How-we-work/Notices/View-UN-Notices-Individuals</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <p class="h6 mb-0"><b>Designation Lists:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr><th class="bg-soft-dark p-1">Designation Name</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td class="p-1">FDLR Interim President</td></tr>
+                                                    <tr><td class="p-1">FDLR-FOCA 1st Vice-President</td></tr>
+                                                    <tr><td class="p-1">FDLR-FOCA Major General</td></tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Nationality Lists:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr><th class="bg-soft-dark p-1">Nationality Name</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td class="p-1">Rwanda</td></tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>List Type:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr><th class="bg-soft-dark p-1">List Name</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td class="p-1">UN List</td></tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Last Day Updated:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr><th class="bg-soft-dark p-1">Date</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td class="p-1">2016-10-13</td></tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Individual Alias Lists:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">Quality</th>
+                                                        <th class="bg-soft-dark p-1">Alias Name</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">Low</td>
+                                                        <td class="p-1">Rumuli</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">Good</td>
+                                                        <td class="p-1">Byiringiro Victor Rumuli</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">Good</td>
+                                                        <td class="p-1">Victor Rumuri</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">Good</td>
+                                                        <td class="p-1">Michel Byiringiro</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Individual Address:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">Sate Province</th>
+                                                        <th class="bg-soft-dark p-1">Country</th>
+                                                        <th class="bg-soft-dark p-1">Note</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">North Kivu Province</td>
+                                                        <td class="p-1">Democratic Republic of the Congo</td>
+                                                        <td class="p-1">as of June 2016</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                            <p class="h6 mb-0"><b>Date Of Birth Lists:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">Type Of Date</th>
+                                                        <th class="bg-soft-dark p-1">Year</th>
+                                                        <th class="bg-soft-dark p-1">Date</th>
+                                                        <th class="bg-soft-dark p-1">Note</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">EXACT</td>
+                                                        <td class="p-1">1997</td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">EXACT</td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1">1961-04-06</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">EXACT</td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1">Nov. 1973</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Place Of Birth Lists:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">City</th>
+                                                        <th class="bg-soft-dark p-1">State Province</th>
+                                                        <th class="bg-soft-dark p-1">Country</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">Musanze District</td>
+                                                        <td class="p-1">Northern Province</td>
+                                                        <td class="p-1">Rwanda</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">Ruhengeri</td>
+                                                        <td class="p-1">Rwanda</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <p class="h6 mb-0"><b>Document Lists:</b></p>
+                                            <table class="table table-striped mb-2">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-soft-dark p-1">Type Of Document</th>
+                                                        <th class="bg-soft-dark p-1">Number</th>
+                                                        <th class="bg-soft-dark p-1">Issue Country</th>
+                                                        <th class="bg-soft-dark p-1">Date expirey</th>
+                                                        <th class="bg-soft-dark p-1">Note</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-1">Passport</td>
+                                                        <td class="p-1">AB850901</td>
+                                                        <td class="p-1">United Republic of Tanzania</td>
+                                                        <td class="p-1">2026-12-11</td>
+                                                        <td class="p-1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-1">Passport</td>
+                                                        <td class="p-1">AB187304</td>
+                                                        <td class="p-1">United Republic of Tanzania</td>
+                                                        <td class="p-1"></td>
+                                                        <td class="p-1">Expired 28 Nov. 2016</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="tab-view-detail-eu"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
