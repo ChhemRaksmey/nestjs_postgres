@@ -15,24 +15,37 @@
 <div class="card card-body mb-3">
     <div class="row">
         
+        <div class="col-md-2 mb-2">
+            <label class="form-label font-size-12 mb-0">Date Start</label>
+            <div class="" id="picker-container-date-start">
+                <input type="text" class="form-control form-control-sm" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd" data-date-container='#picker-container-date-start' data-provide="datepicker" />
+            </div>
+        </div>
+        
+        <div class="col-md-2 mb-2">
+            <label class="form-label font-size-12 mb-0">Date End</label>
+            <div class="" id="picker-container-date-end">
+                <input type="text" class="form-control form-control-sm" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd" data-date-container='#picker-container-date-end' data-provide="datepicker" />
+            </div>
+        </div>
+        
         <div class="col-md-3 mb-2">
-            <label class="form-label font-size-12 mb-0">Customer Name</label>
+            <label class="form-label font-size-12 mb-0">Customer Filters</label>
             <input type="text" class="form-control form-control-sm" placeholder="cid / legacy id / customer name" />
         </div>
         
-        <div class="col-md-3 mb-2">
-            <label class="form-label font-size-12 mb-0">Document Id</label>
+        <div class="col-md-2 mb-2">
+            <label class="form-label font-size-12 mb-0">Document No</label>
             <input type="text" class="form-control form-control-sm" placeholder="document number" />
         </div>
         
-        <div class="col-md-3 mb-2">
-            <label class="form-label font-size-12 mb-0">Branch</label>
-            <select class="picker-dropdown form-select form-select-sm" multiple="multiple" data-placeholder="Choose ...">
+        <div class="col-md-3">
+            <label class="form-label font-size-12 mb-0">Branches</label>
+            <select class="picker-dropdown form-select form-select-sm">
                 <option value="ALL" selected>All Branches</option>
-                <option value="Branch 1">Branch 1</option>
-                <option value="Branch 2">Branch 2</option>
-                <option value="Branch 3">Branch 3</option>
-                <option value="Branch 4">Branch 4</option>
+                <option value="Branch1">Branch 1</option>
+                <option value="Branch2">Branch 2</option>
+                <option value="Branch3">Branch 3</option>
             </select>
         </div>
 
@@ -48,10 +61,12 @@
 
                     <thead>
                         <tr>
-                            <th class="py-1 col-1">CID</th>
+                            <th class="py-1 col-1 text-center">CID</th>
                             <th class="py-1 col-4">Customer Name</th>
-                            <th class="py-1 col-3">Exception Date</th>
-                            <th class="py-1 col-3">Release Date</th>
+                            <th class="py-1 col-1 text-center">Gender</th>
+                            <th class="py-1 col-1 text-center">Date Birth</th>
+                            <th class="py-1 col-3 text-center">Detected In Lists</th>
+                            <th class="py-1 col-1 text-center">Exception Date</th>
                             <th class="py-1 col-1 text-center">Action</th>
                         </tr>
                     </thead>
@@ -60,10 +75,17 @@
 
                         <% for(var i=1; i <= 15; i++) { %>
                             <tr>
-                                <td class="py-1">Consumer Name <%= i %></td>
+                                <td class="py-1 text-center">CID-<%= i %></td>
                                 <td class="py-1"></td>
-                                <td class="py-1"></td>
-                                <td class="py-1"></td>
+                                <td class="py-1 text-center"></td>
+                                <td class="py-1 text-center"></td>
+                                <td class="py-1 text-center">
+                                    <span class="badge bg-soft-primary">OFAC - SDN</span>
+                                    <span class="badge bg-soft-primary">OFAC - Consolidate</span>
+                                    <span class="badge bg-soft-primary">UN - Consolidate</span>
+                                    <span class="badge bg-soft-primary">EU</span>
+                                </td>
+                                <td class="py-1 text-center"></td>
                                 <td class="py-1 text-center">
                                     <a role="button" class="text-muted fas fa-ellipsis-h" data-bs-toggle="modal" aria-haspopup="true" aria-expanded="false" data-bs-target="#popup-view"></a>
                                 </td>

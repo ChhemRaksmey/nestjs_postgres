@@ -1,0 +1,242 @@
+<% pageStyle = '' %>
+
+<form action="/aml/maintenance/customer-detection-role/edit/<%= recid %>" method="post" enctype="multipart/form-data">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-flex align-items-center justify-content-between">
+                <h4 class="mb-0">AML - Transaction Detect Role</h4>
+                <div>
+                    <button class="btn btn-sm btn-primary w-sm">Submit</button>
+                    <button class="btn btn-sm btn-primary w-sm">Cancel</button>
+                    <button class="btn btn-sm btn-primary w-sm">Help</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-body font-size-12">
+        <div class="row">
+
+            <div class="row col-md-4 mb-2">
+                <label class="form-label mb-1">Customer Type</label>
+                <input type="text" class="form-control form-control-sm" disabled readonly value="<%= recid %>" />
+            </div>
+
+            <div class="col-md-12">
+                <table class="table table-striped mb-0 font-size-12">
+                    <thead>
+                        <tr>
+                            <th class="py-1 col-1 text-center">Role Name</th>
+                            <th class="py-1 col-8">Narrative</th>
+                            <th class="py-1 col-3">Condition Values</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-001</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer open account more then 2 in last week.</label></td>
+                            <td class="py-1"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-002</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer open account more then 4 in last month.</label></td>
+                            <td class="py-1">
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-003</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash deposit total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>Y</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-004</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash deposit total greater then or equal to X in month</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>Y</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-005</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash withdrawal total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>Y</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-006</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash withdrawal total greater then or equal to X in month.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>Y</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-007</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make cash withdrawal total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>Y</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-008</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make account transfer in total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>Y</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-009</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make account transfer in total greater then or equal to X in month.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>Y</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-010</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make account transfer out total greater then or equal to X in week.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>Y</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 text-center"><label class="col-form-label py-1">AML-011</label></td>
+                            <td class="py-1"><label class="col-form-label py-1">Customer make account transfer out total greater then or equal to X in month.</label></td>
+                            <td class="py-1">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>X</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div class="input-group-text py-0 px-2 font-size-12"><b>Y</b>&nbsp;=&nbsp;</div>
+                                            <input type="text" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+
+</form>
+<% pageScripts = '<script>' +
+    '$(document).ready(function () {' +
+        list_risk_levels.map((item, row) => `$("#picker-color-${row + 1}").spectrum({ showAlpha: true });`).join('') +
+    '});' +
+'</script>'; %>

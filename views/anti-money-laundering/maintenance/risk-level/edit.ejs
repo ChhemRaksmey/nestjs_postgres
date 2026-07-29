@@ -1,0 +1,86 @@
+<% pageStyle = '' %>
+
+<form action="/aml/maintenance/risk/level/edit/<%= recid %>" method="post" enctype="multipart/form-data">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-flex align-items-center justify-content-between">
+                <h4 class="mb-0">AML - Risk Level</h4>
+                <div>
+                    <button class="btn btn-sm btn-primary w-sm">Submit</button>
+                    <button class="btn btn-sm btn-primary w-sm">Cancel</button>
+                    <button class="btn btn-sm btn-primary w-sm">Help</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-body font-size-12">
+        <div class="outer-repeater">
+            <div data-repeater-list="outer-group" class="outer">
+                <div data-repeater-item class="outer">
+                    <div class="inner-repeater">
+                        <div class="inner">
+
+                            <div class="row col-md-6 mb-2">
+                                <label class="form-label mb-1">Customer Type</label>
+                                <input type="text" class="form-control form-control-sm" disabled readonly value="<%= recid %>" />
+                            </div>
+
+                            <div class="row col-md-6 mb-2">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="p-1 col-6">Risk Level</th>
+                                            <th class="p-1 col-3">Risk Color</th>
+                                            <th class="p-1 col-2">Max Score</th>
+                                            <th class="p-1 col-1 text-center">
+                                                <a href="javascript: void(0);" class="btn btn-sm btn-primary font-size-10" data-repeater-create>
+                                                    <i class="fas fa-plus"></i>
+                                                </a>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-repeater-list="inner-group">
+
+                                        <% list_risk_levels.forEach((item, row) => { %>
+                                            <tr class="inner">
+                                                <td class="p-1"><input type="text" class="form-control form-control-sm" value="<%= item.risk_level_name %>" /></td>
+                                                <td class="p-1"><input type="text" class="form-control form-control-sm" value="<%= item.risk_color %>" id="picker-color-<%= row + 1 %>"></td>
+                                                <td class="p-1"><input type="text" class="form-control form-control-sm text-end" value="<%= item.max_score %>" /></td>
+                                                <td class="p-1 text-center">
+                                                    <a href="javascript: void(0);" class="btn btn-sm btn-danger font-size-10" onclick="$(this).closest('tr').remove()">
+                                                        <i class="fas fa-minus"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <% }); %>
+
+                                        <tr data-repeater-item class="inner">
+                                            <td class="p-1"><input type="text" class="form-control form-control-sm" /></td>
+                                            <td class="p-1"><input type="text" class="form-control form-control-sm" /></td>
+                                            <td class="p-1"><input type="text" class="form-control form-control-sm text-end" /></td>
+                                            <td class="p-1 text-center">
+                                                <a href="javascript: void(0);" class="btn btn-sm btn-danger font-size-10" data-repeater-delete>
+                                                    <i class="fas fa-minus"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+<% pageScripts = '<script>' +
+    '$(document).ready(function () {' +
+        list_risk_levels.map((item, row) => `$("#picker-color-${row + 1}").spectrum({ showAlpha: true });`).join('') +
+    '});' +
+'</script>'; %>

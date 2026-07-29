@@ -17,8 +17,8 @@
 
                     <thead>
                         <tr>
-                            <th class="py-1 col-11">Customer Type</th>
-                            <th class="py-1 col-1 text-center">Action</th>
+                            <th class="py-1 text-uppercase col-11"><b>Customer Type</b></th>
+                            <th class="py-1 text-uppercase col-1 text-center"><b>Action</b></th>
                         </tr>
                     </thead>
         
@@ -33,7 +33,7 @@
                                     </a>
                                     <div class="dropdown-menu font-size-12" style="inset: unset !important;">
                                         <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-view">View</a>
-                                        <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-edit">Edit</a>
+                                        <a class="dropdown-item py-2" href="/aml/maintenance/risk/level/edit/Consumer">Edit</a>
                                     </div>
                                 </div>
                             </td>
@@ -48,7 +48,7 @@
                                     </a>
                                     <div class="dropdown-menu font-size-12" style="inset: unset !important;">
                                         <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-view">View</a>
-                                        <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-edit">Edit</a>
+                                        <a class="dropdown-item py-2" href="/aml/maintenance/risk/level/edit/Commercial">Edit</a>
                                     </div>
                                 </div>
                             </td>
@@ -63,7 +63,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="popup-form-view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true" style="display: none;">
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true" style="display: none;" id="popup-form-view">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
 
@@ -117,7 +117,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="popup-form-edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true" style="display: none;">
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true" style="display: none;" id="popup-form-edit">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
 
@@ -126,79 +126,48 @@
             </div>
 
             <div class="modal-body">
+                <div class="outer-repeater">
+                    <div data-repeater-list="outer-group" class="outer">
+                        <div data-repeater-item class="outer">
+                            <div class="inner-repeater">
+                                <div class="inner row">
 
-                <div class="row">
-                    <div class="col-md-12 mb-2">
-                        <label class="form-label mb-0">Customer Type</label>
-                        <input type="text" class="form-control form-control-sm" disabled readonly value="" />
+                                    <div class="col-md-12 mb-2">
+                                        <label class="form-label mb-1">Customer Type</label>
+                                        <input type="text" class="form-control form-control-sm" disabled readonly value="" />
+                                    </div>
+
+                                    <div class="col-md-12 mb-2">
+                                        <table class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="p-1 col-5">Risk Level</th>
+                                                    <th class="p-1 col-3">Risk Color</th>
+                                                    <th class="p-1 col-3">Max Score</th>
+                                                    <th class="p-1 col-1 text-center"><a href="javascript: void(0);" class="px-1 text-primary" data-repeater-create><i class="fas fa-plus"></i></a></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody data-repeater-list="inner-group">
+                                                <tr data-repeater-item class="inner">
+                                                    <td class="p-1"><input type="text" class="form-control form-control-sm" /></td>
+                                                    <td class="p-1"><input type="text" class="form-control form-control-sm" /></td>
+                                                    <td class="p-1"><input type="text" class="form-control form-control-sm" /></td>
+                                                    <td class="p-1 text-center">
+                                                        <a href="javascript: void(0);" class="px-1 text-danger" data-repeater-delete><i class="fas fa-minus"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <table class="table table-striped mb-0">
-                    <thead>
-                        <tr>
-                            <th class="py-1 col-6">Risk Level</th>
-                            <th class="py-1 col-4">Risk Color</th>
-                            <th class="py-1 col-2">Max Score %</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 form-control form-control-sm" name="risk_name_1" value="High" /></td>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 text-center form-control form-control-sm" name="risk_color_1" id="picker-color1" value="#bb0202" />
-                            </td>
-                            <td class="py-1 px-1">
-                                <input type="number" class="px-1 text-center form-control form-control-sm" name="risk_max_score_1" value="100" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 form-control form-control-sm" name="risk_name_2" value="medium" /></td>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 text-center form-control form-control-sm" name="risk_color_2" id="picker-color2" value="#e2c800" />
-                            </td>
-                            <td class="py-1 px-1">
-                                <input type="number" class="px-1 text-center form-control form-control-sm" name="risk_max_score_2" value="80" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 form-control form-control-sm" name="risk_name_3" value="Low" /></td>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 text-center form-control form-control-sm" name="risk_color_3" id="picker-color3" value="#19d5ac" />
-                            </td>
-                            <td class="py-1 px-1">
-                                <input type="number" class="px-1 text-center form-control form-control-sm" name="risk_max_score_3" value="40" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 form-control form-control-sm" name="risk_name_4" value="" /></td>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 text-center form-control form-control-sm" name="risk_color_4" id="picker-color4" value="" />
-                            </td>
-                            <td class="py-1 px-1">
-                                <input type="number" class="px-1 text-center form-control form-control-sm" name="risk_max_score_4" value="" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 form-control form-control-sm" name="risk_name_5" value="" /></td>
-                            <td class="py-1 px-1">
-                                <input type="text" class="px-1 text-center form-control form-control-sm" name="risk_color_5" id="picker-color5" value="" />
-                            </td>
-                            <td class="py-1 px-1">
-                                <input type="number" class="px-1 text-center form-control form-control-sm" name="risk_max_score_5" value="" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
             </div>
 
-            <div class="modal-footer">
+            <div class="modal-footer py-2">
                 <button type="button" class="btn btn-sm w-sm btn-primary">Submit</button>
                 <button type="button" class="btn btn-sm w-sm btn-primary" data-bs-dismiss="modal">Close</button>
             </div>
@@ -207,4 +176,8 @@
     </div>
 </div>
 
-<% pageScripts = `` %>
+<% pageScripts = `<script>
+    $(document).ready(function () {
+        
+    });
+</script>`; %>

@@ -15,6 +15,12 @@
 <script src="/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
 <script src="/libs/@chenfengyuan/datepicker/datepicker.min.js"></script>
 
+<!-- fontawesome icons init -->
+<script src="/js/pages/fontawesome.init.js"></script>
+
+<!-- toastr plugin -->
+<script src="/libs/toastr/build/toastr.min.js"></script>
+
 <!-- Required datatable js -->
 <script src="/libs/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -42,12 +48,6 @@
     $(document).ready(function () {
 
         $(".picker-dropdown").select2();
-
-        $("#picker-color1").spectrum();
-        $("#picker-color2").spectrum();
-        $("#picker-color3").spectrum();
-        $("#picker-color4").spectrum();
-        $("#picker-color5").spectrum();
 
         $('#datatable').DataTable({
             ordering: !1,
@@ -78,15 +78,6 @@
         
     });
 </script>
-
-<!-- fontawesome icons init -->
-<script src="/js/pages/fontawesome.init.js"></script>
-
-<!-- toastr plugin -->
-<script src="/libs/toastr/build/toastr.min.js"></script>
-
-<!-- toastr init -->
-<script src="/js/pages/toastr.init.js"></script>
 
 <!-- App js -->
 <script src="/js/app.js"></script>
