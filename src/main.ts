@@ -8,7 +8,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   
   // Setup View Engine (EJS)
-  app.setBaseViewsDir(join(process.cwd(), 'views'));
+  app.setBaseViewsDir(join(process.cwd(), 'src/views'));
   app.setViewEngine('ejs');
 
   // Express session configuration
