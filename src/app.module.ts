@@ -2,13 +2,13 @@ import { Module, MiddlewareConsumer } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { databaseConfig } from './backend/configs/database.config';
-import { AuthMiddleware } from './backend/middlewares/auth.middleware';
+import { databaseConfig } from './configs/database.config';
+import { AuthMiddleware } from './middlewares/auth.middleware';
 
 // import controler, provide and database entity
-import { import_controllers } from './backend/configs/routes.controler.config';
-import { import_providers } from './backend/configs/routes.provider.config';
-import { import_entitys } from './backend/configs/routes.entity.config';
+import { import_controllers } from './configs/routes.controler.config';
+import { import_providers } from './configs/routes.provider.config';
+import { import_entitys } from './configs/routes.entity.config';
 
 
 @Module({
