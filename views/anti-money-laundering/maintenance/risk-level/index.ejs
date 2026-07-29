@@ -1,11 +1,9 @@
+<% pageStyle = '' %>
 
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
             <h4 class="mb-0">AML - Risk Level</h4>
-            <div class="page-title-right">
-                <a role="button" class="btn btn-sm w-sm btn-primary">Help</a>
-            </div>
         </div>
     </div>
 </div>
@@ -15,7 +13,7 @@
         <div class="card">
             <div class="card-body">
         
-                <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap">
+                <table id="dt-main-listing" class="table table-striped table-bordered dt-responsive nowrap">
 
                     <thead>
                         <tr>
@@ -31,7 +29,7 @@
                             <td class="py-1 text-center">
                                 <div class="dropdown dropstart">
                                     <a role="button" class="" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-tools"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </a>
                                     <div class="dropdown-menu font-size-12" style="inset: unset !important;">
                                         <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-view">View</a>
@@ -46,7 +44,7 @@
                             <td class="py-1 text-center">
                                 <div class="dropdown dropstart">
                                     <a role="button" class="" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-tools"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
                                     </a>
                                     <div class="dropdown-menu font-size-12" style="inset: unset !important;">
                                         <a class="dropdown-item py-2" data-bs-toggle="modal" data-bs-target="#popup-form-view">View</a>
@@ -64,7 +62,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="modal fade" id="popup-form-view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg" role="document">
@@ -209,3 +206,5 @@
         </div>
     </div>
 </div>
+
+<% pageScripts = `` %>

@@ -1,3 +1,4 @@
+<% pageStyle = '' %>
 
 <div class="row">
     <div class="col-12">
@@ -63,9 +64,8 @@
                     <thead>
                         <tr>
                             <th class="py-1 col-1 text-center">CID</th>
-                            <th class="py-1 col-1 text-center">Branch</th>
                             <th class="py-1 col-4">Customer Name</th>
-                            <th class="py-1 col-5">Detected Roles</th>
+                            <th class="py-1 col-6">Detected Roles</th>
                             <th class="py-1 col-1 text-center">Action</th>
                         </tr>
                     </thead>
@@ -74,10 +74,15 @@
 
                         <% for(var i=1; i <= 15; i++) { %>
                             <tr>
-                                <td class="py-1 text-center">Consumer Name <%= i %></td>
-                                <td class="py-1 text-center"></td>
+                                <td class="py-1 text-center">10000<%= i %></td>
                                 <td class="py-1"></td>
-                                <td class="py-1">90%</td>
+                                <td class="py-1">
+                                    <span class="badge bg-soft-primary">AML-001</span>
+                                    <span class="badge bg-soft-primary">AML-002</span>
+                                    <span class="badge bg-soft-primary">AML-003</span>
+                                    <span class="badge bg-soft-primary">AML-004</span>
+                                    <span class="badge bg-soft-primary">AML-005</span>
+                                </td>
                                 <td class="py-1 text-center">
                                     <a role="button" class="text-muted fas fa-ellipsis-h" data-bs-toggle="modal" aria-haspopup="true" aria-expanded="false" data-bs-target="#popup-view"></a>
                                 </td>
@@ -236,3 +241,27 @@
         </div>
     </div>
 </div>
+
+<% pageScripts = `
+    <script>
+        $(document).ready(function () {
+
+            $(".picker-dropdown").select2();
+
+            $('#dt-main-listing').DataTable({
+                ordering: !1,
+                lengthChange: !1,
+                searching: !1,
+                language: {
+                    paginate: {
+                        first: '<i class="fas fa-angle-double-left"></i>',
+                        last: '<i class="fas fa-angle-double-right"></i>',
+                        next: '<i class="fas fa-angle-right"></i>',
+                        previous: '<i class="fas fa-angle-left"></i>'
+                    }
+                },
+            });
+
+        });
+    </script>
+` %>

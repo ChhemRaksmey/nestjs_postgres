@@ -15,4 +15,47 @@ export class ControllerAMLMaintenanceCustomerDetectionRole {
     });
   }
 
+  @Get('edit/:id')
+  async renderEdit(@Param('id') id: string, @Res() res: Response, @Req() req: Request) {    
+    try {
+      if (!(req.session as any)?.user) return res.redirect('/login');
+
+      return renderView(res, 'anti-money-laundering/maintenance/customer-detection-role/edit', { 
+        user: (req.session as any).user, 
+        error: null,
+      });
+    } catch (err: any) {
+      return res.redirect('/aml/maintenance/customer-detection-role');
+    }
+  }
+
+  @Post('edit/:id')
+  async update(@Param('id') id: string, @Body() body: any, @Res() res: Response, @Req() req: Request) {
+    try {
+      if (!(req.session as any)?.user) return res.redirect('/login');
+
+      return res.redirect('/aml/maintenance/customer-detection-role');
+    } catch (err: any) {
+
+      return renderView(res, 'anti-money-laundering/maintenance/customer-detection-role/edit', { 
+        user: (req.session as any).user, 
+        error: err.message,
+      });
+    }
+  }
+
+  @Get('view/:id')
+  async renderView(@Param('id') id: string, @Res() res: Response, @Req() req: Request) {
+    try {
+      if (!(req.session as any)?.user) return res.redirect('/login');
+
+      return renderView(res, 'anti-money-laundering/maintenance/customer-detection-role/view', { 
+        user: (req.session as any).user, 
+        error: null,
+      });
+    } catch (err: any) {
+      return res.redirect('/aml/maintenance/customer-detection-role');
+    }
+  }
+  
 }

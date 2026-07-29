@@ -1,7 +1,9 @@
+SET SQL_SAFE_UPDATES = 0;
+
+
 DROP DATABASE IF EXISTS db_core_system;
 CREATE DATABASE db_core_system DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE db_core_system;
-
 
 
 

@@ -5,6 +5,8 @@
         
         <%- include('htmlStyle') %>
 
+        <%- typeof pageStyles !== 'undefined' ? pageStyles : '' %>
+
     </head>
 
     <body data-sidebar="dark">
@@ -32,6 +34,8 @@
         <div class="rightbar-overlay"></div>
 
         <%- include('htmlScript') %>
+
+        <%- typeof pageScripts !== 'undefined' ? pageScripts : '' %>
 
     </body>
 

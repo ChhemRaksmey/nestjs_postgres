@@ -1,3 +1,5 @@
+SET SQL_SAFE_UPDATES = 0;
+
 
 INSERT INTO sys_app_module VALUES
     ('SYS_APP_MDL_2026_001_01', 'System Administrator');

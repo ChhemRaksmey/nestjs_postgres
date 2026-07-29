@@ -1,3 +1,5 @@
+SET SQL_SAFE_UPDATES = 0;
+
 
 
 DROP TABLE IF EXISTS aml_oversea_end_points;
