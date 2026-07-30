@@ -528,6 +528,28 @@ CREATE TABLE aml_scanning_roles (
     scan_narrative TEXT,
     PRIMARY KEY(batch_id, customer_id)
 );
+DROP TABLE IF EXISTS aml_scanning_role_errors;
+CREATE TABLE aml_scanning_role_errors (
+	batch_id VARCHAR(35) NOT NULL,
+    customer_id VARCHAR(15) NOT NULL,
+    aml_0001 TEXT,
+    aml_0002 TEXT,
+    aml_0003 TEXT,
+    aml_0004 TEXT,
+    aml_0005 TEXT,
+    aml_0006 TEXT,
+    aml_0007 TEXT,
+    aml_0008 TEXT,
+    aml_0009 TEXT,
+    aml_0010 TEXT,
+    aml_0011 TEXT,
+    aml_0012 TEXT,
+    aml_0013 TEXT,
+    aml_0014 TEXT,
+    PRIMARY KEY(batch_id, customer_id)
+);
+
+
 
 
 DROP FUNCTION IF EXISTS fs_aml_consumer_0001;
