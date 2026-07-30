@@ -47,9 +47,16 @@ BEGIN
         -- Format: 'July 29 2026'
         WHEN p_date REGEXP '^[A-Za-z]+ [0-9]{1,2},? [0-9]{4}$'
             THEN STR_TO_DATE(p_date, '%M %d %Y')
+        
+        -- Format: 'July 2026'
+        WHEN p_date REGEXP '^[A-Za-z]+ [0-9]{4}$'
+            THEN STR_TO_DATE(p_date, '%M %Y')
+        
+        -- Format: '2026 July'
+        WHEN p_date REGEXP '^[0-9]{4}$ [A-Za-z]+'
+            THEN STR_TO_DATE(p_date, '%Y %M')
 
-        ELSE
-            CAST(p_date AS DATETIME)
+        ELSE CAST(p_date AS DATETIME)
 
     END;
 
@@ -554,21 +561,16 @@ CREATE TABLE aml_scanning_role_errors (
 
 DROP FUNCTION IF EXISTS fs_aml_consumer_0001;
 DELIMITER $$
-CREATE FUNCTION fs_aml_consumer_0001(
-    p_customer_id VARCHAR(15),
-    p_value_x DECIMAL(15, 2)
-) RETURNS INT DETERMINISTIC
+CREATE FUNCTION fs_aml_consumer_0001( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
 BEGIN
 
-    DECLARE v_check INT DEFAULT 0;
-    DECLARE v_similar DECIMAL(15, 2);
+    DECLARE v_check DECIMAL(15, 2) DEFAULT 0.00;
     
     WITH RECURSIVE
     tmp_trn_cash AS (
         SELECT customer_id, transaction_id, record_status, customer_amt_lcy
         FROM vw_transaction_cash
-        WHERE transaction_code IN (8, 14, 18)
-            AND customer_id COLLATE utf8mb4_unicode_ci <= p_customer_id
+        WHERE transaction_code IN (8, 14, 18) AND customer_id COLLATE utf8mb4_unicode_ci <= p_customer_id
     ),
     tmp_trn_cash_reve AS (
         SELECT DISTINCT transaction_id  FROM tmp_trn_cash WHERE record_status = 'REVE'
@@ -580,11 +582,91 @@ BEGIN
         HAVING total_amt >= p_value_x
         ORDER BY total_amt DESC
     )
-    SELECT total_amt INTO v_similar FROM tmp_trn  LIMIT 1;
+    SELECT total_amt INTO v_check FROM tmp_trn  LIMIT 1;
 
-    RETURN IF(v_similar IS NOT NULL, 1, 0);
+    RETURN IF(v_check IS NOT NULL OR v_check >= p_value_x, 1, 0);
 END $$
 DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0002;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0002( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0003;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0003( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0004;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0004( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0005;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0005( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0006;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0006( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0007;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0007( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0009;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0008( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0009;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0009( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0010;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0010( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0011;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0011( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0012;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0012( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0013;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0013( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+DROP FUNCTION IF EXISTS fs_aml_consumer_0014;
+DELIMITER $$
+CREATE FUNCTION fs_aml_consumer_0014( p_customer_id VARCHAR(15), p_value_x DECIMAL(15, 2) ) RETURNS INT DETERMINISTIC
+BEGIN RETURN 1; END $$
+DELIMITER ;
+
+
 
 
 SET @cbs_customer_id = '1001747';
